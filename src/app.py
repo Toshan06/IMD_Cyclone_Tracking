@@ -1,3 +1,4 @@
+from zipfile import Path
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
@@ -13,7 +14,9 @@ st.set_page_config(
 st.title("IMD Historical Cyclone Track Explorer")
 st.caption("Historical Cyclone Analysis | 1982–2025")
 
-FILE_PATH = "../data/IMD_Standardized.xlsx"
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+FILE_PATH = BASE_DIR / "data" / "IMD_Standardized.xlsx"
 
 st.markdown("""
 <style>
