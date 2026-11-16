@@ -13,7 +13,7 @@ st.set_page_config(
 st.title("IMD Historical Cyclone Track Explorer")
 st.caption("Historical Cyclone Analysis | 1982–2025")
 
-FILE_PATH = "IMD_Cyclone_Tracking/data/IMD_Standardized.xlsx"
+FILE_PATH = "../data/IMD_Standardized.xlsx"
 
 st.markdown("""
 <style>
@@ -26,9 +26,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# ==================================================
 # LOAD DATA
-# ==================================================
 
 @st.cache_data
 def load_data():
@@ -561,7 +559,7 @@ with map_col:
         import geopandas as gpd
 
         india_gdf = gpd.read_file(
-            "IMD_Cyclone_Tracking/data/Outline_of_India/Outline_of_India.shp"
+            "../data/Outline_of_India/Outline_of_India.shp"
         ).to_crs("EPSG:4326")
 
         for geometry in india_gdf.geometry:
