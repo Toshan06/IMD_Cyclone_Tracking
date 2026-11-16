@@ -562,7 +562,7 @@ with map_col:
         import geopandas as gpd
 
         india_gdf = gpd.read_file(
-            "../data/Outline_of_India/Outline_of_India.shp"
+            BASE_DIR / "data" / "Outline_of_India" / "Outline_of_India.shp"
         ).to_crs("EPSG:4326")
 
         for geometry in india_gdf.geometry:
